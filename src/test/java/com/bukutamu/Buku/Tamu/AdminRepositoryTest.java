@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-// import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.test.annotation.Rollback;
 
@@ -29,9 +28,9 @@ public class AdminRepositoryTest {
     @Test
     public void testCreateAdmin() {
         Admin admin = new Admin();
-        admin.setEmail("admin2@mail.com");
+        admin.setEmail("admin@mail.com");
         admin.setPassword(hashPassword("root1234"));
-        admin.setName("admin2");
+        admin.setName("admin");
 
         repo.save(admin);
         // Admin existAdmin = entityManager.find(Admin.class, saveAdmin.getId());
